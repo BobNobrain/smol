@@ -1,0 +1,25 @@
+{
+    "name": "Hello World",
+    "deps": [],
+    "targets": [
+        {
+            "type": "executable",
+            "entrypoint": "HelloWorld",
+            "path": "bin/hw",
+            "output": "IL"
+        },
+        {
+            "type": "lib",
+            "include": ["HelloWorld.*"],
+            "path": "dist/hello-world/lib",
+            "output": "IL"
+        },
+        {
+            "type": "lib",
+            "include": "HelloWorld.*",
+            "path": "dist/hello-world/bundle",
+            "output": "IL",
+            "bundle": true
+        }
+    ]
+}

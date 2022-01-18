@@ -1,6 +1,6 @@
 module Main where
 
-import Lib
+import Smol.Cli (cli)
 
 main :: IO ()
-main = someFunc
+main = cli

@@ -1,0 +1,24 @@
+module HelloWorld
+
+import Process (process, stdout)
+
+main :: IO Unit {
+    stdout.putLine "Hello, world!"
+    process.exit 1
+}
+
+union Nat {
+    Zero
+    Succ Nat
+} numeric
+union Bool { True, False }
+
+sub = \a b {
+    a :: Nat
+    b :: Nat
+    b <= a
+    returns :: Nat
+
+    sub a 0 = a
+    sub (Nat.Succ a) (Nat.Succ b) = sub a b
+}

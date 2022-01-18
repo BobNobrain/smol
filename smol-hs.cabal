@@ -25,13 +25,29 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Smol.Cli
+      Smol.Compiler.Target
+      Smol.Module.Name
+      Smol.Parser.CodePos
+      Smol.Parser.CodePosRange
+      Smol.Parser.Literals
+      Smol.Parser.Tokenizer
+      Smol.Parser.Tokens
+      Smol.Project
+      Smol.Project.Config
+      Smol.Project.Files
+      Smol.Types
+      Smol.Types.Cardinality
+      Smol.Types.Operations
   other-modules:
       Paths_smol_hs
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
+    , directory
+    , filepath
     , parsec
     , text
   default-language: Haskell2010
@@ -44,7 +60,10 @@ executable smol
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
+    , directory
+    , filepath
     , parsec
     , smol-hs
     , text
@@ -59,7 +78,10 @@ test-suite smol-hs-test
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
+    , directory
+    , filepath
     , parsec
     , smol-hs
     , text
